@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}VEO3 Prompt Generator{% endblock %}
+{% block content %}
+<h2 class="text-xl font-bold mb-4">VEO3 Prompt Generator</h2>
+<form method="post">
+  {% csrf_token %}
+  <input type="text" name="input" placeholder="Describe your video idea..." class="border rounded px-4 py-2 w-full mb-4" />
+  <button class="bg-blue-500 text-white px-4 py-2 rounded">Generate Prompt</button>
+</form>
+
+{% if result %}
+<div class="mt-4 p-4 bg-gray-100 rounded">
+  <p><strong>Generated Prompt:</strong></p>
+  <p class="mt-2">{{ result }}</p>
+</div>
+{% endif %}
+{% endblock %}

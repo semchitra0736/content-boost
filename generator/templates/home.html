@@ -1,0 +1,79 @@
+<!-- templates/home.html -->
+{% extends 'base.html' %}
+
+{% block title %}Home - ContentBoost{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="bg-gray-50 py-20">
+    <div class="container mx-auto px-4 text-center">
+        <h1 class="text-4xl font-bold leading-tight mb-4">Supercharge your content creation<br>with ContentBoost</h1>
+        <p class="text-lg text-gray-600 mb-6">ContentBoost is a suite of tools designed to help content creators streamline their workflow, enhance their creativity, and maximize their impact.</p>
+        <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-lg text-sm hover:bg-blue-700">Get started</a>
+    </div>
+</section>
+
+<!-- Our Tools -->
+<section class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold mb-10 text-center">Our Tools</h2>
+        <div class="grid md:grid-cols-4 gap-6 text-center">
+            <div class="p-6 border rounded-xl shadow hover:shadow-md">
+                <h3 class="font-semibold text-lg mb-2">
+                  <a href="{% url 'veo3' %}" class="text-blue-600 hover:underline">VEO3 Prompt Generator</a>
+                </h3>
+                <p class="text-sm text-gray-600">Create video script prompts with local or Gemini AI.</p>
+            </div>
+            <div class="p-6 border rounded-xl shadow hover:shadow-md">
+                <h3 class="font-semibold text-lg mb-2">
+                  <a href="{% url 'veo3' %}" class="text-blue-600 hover:underline">YouTube Tag Generator</a>
+                </h3>
+                <p class="text-sm text-gray-600">Generate effective tags to grow your YouTube reach.</p>
+            </div>
+            <div class="p-6 border rounded-xl shadow hover:shadow-md"> 
+                <h3 class="font-semibold text-lg mb-2">
+                  <a href="{% url 'veo3' %}" class="text-blue-600 hover:underline">TikTok Hashtag Tool</a>
+                </h3>
+                <p class="text-sm text-gray-600">Boost visibility with trending TikTok hashtags.</p>
+            </div>
+            <div class="p-6 border rounded-xl shadow hover:shadow-md">
+                <h3 class="font-semibold text-lg mb-2">
+                  <a href="{% url 'veo3' %}" class="text-blue-600 hover:underline">Facebook Reel Hashtags</a>
+                </h3>
+                <p class="text-sm text-gray-600">Get the best hashtags for Facebook Reels.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How It Works -->
+<section class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4">
+        <h2 class="text-2xl font-bold mb-10 text-center">How ContentBoost Works</h2>
+        <div class="grid md:grid-cols-3 gap-10 text-center">
+            <div>
+                <img src="https://via.placeholder.com/150" class="mx-auto mb-4 rounded-xl" />
+                <h3 class="font-semibold text-lg mb-2">Generate Ideas</h3>
+                <p class="text-sm text-gray-600">Use the VEO3 generator to brainstorm topics.</p>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/150" class="mx-auto mb-4 rounded-xl" />
+                <h3 class="font-semibold text-lg mb-2">Optimize Content</h3>
+                <p class="text-sm text-gray-600">Refine your content for maximum performance.</p>
+            </div>
+            <div>
+                <img src="https://via.placeholder.com/150" class="mx-auto mb-4 rounded-xl" />
+                <h3 class="font-semibold text-lg mb-2">Track Performance</h3>
+                <p class="text-sm text-gray-600">Measure impact and improve across channels.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Final CTA -->
+<section class="py-20 text-center">
+    <h2 class="text-3xl font-bold mb-4">Ready to boost your content?</h2>
+    <p class="text-gray-600 mb-6">Join thousands of creators already using ContentBoost.</p>
+    <a href="#" class="bg-blue-600 text-white px-6 py-3 rounded-lg text-sm hover:bg-blue-700">Get started</a>
+</section>
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "base.html" %}
+{% block title %}Video Prompt Generator{% endblock %}
+{% block content %}
+<div class="container mx-auto mt-32 px-4">
+  <h2 class="text-2xl font-bold mb-6">Video Prompt Generator</h2>
+
+<form method="post" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+  {% csrf_token %}
+
+  <div>
+    <label class="block text-sm font-medium mb-1">Character</label>
+    <input type="text" name="character" placeholder="Enter a character" class="border rounded px-4 py-2 w-full" />
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium mb-1">Action</label>
+    <input type="text" name="action" placeholder="Enter an action" class="border rounded px-4 py-2 w-full" />
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium mb-1">Setting</label>
+    <input type="text" name="setting" placeholder="Enter a setting" class="border rounded px-4 py-2 w-full" />
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium mb-1">Visual Style (color, emotion)</label>
+    <input type="text" name="visual" placeholder="Enter a visual style" class="border rounded px-4 py-2 w-full" />
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium mb-1">Season or Weather</label>
+    <input type="text" name="season" placeholder="Enter a season or weather" class="border rounded px-4 py-2 w-full" />
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium mb-1">Duration</label>
+    <input type="text" name="duration" placeholder="Enter a duration" class="border rounded px-4 py-2 w-full" />
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium mb-1">Resolution</label>
+    <input type="text" name="resolution" placeholder="Enter a resolution" class="border rounded px-4 py-2 w-full" />
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium mb-1">Aspect Ratio</label>
+    <input type="text" name="aspect_ratio" placeholder="Enter an aspect ratio" class="border rounded px-4 py-2 w-full" />
+  </div>
+
+  <div class="md:col-span-2">
+    <label class="block text-sm font-medium mb-1">Dialog</label>
+    <input type="text" name="dialog" placeholder="Enter dialog" class="border rounded px-4 py-2 w-full" />
+  </div>
+
+  <div class="md:col-span-2">
+    <label class="block text-sm font-medium mb-1">Time of Day</label>
+    <input type="text" name="time" placeholder="Enter a time (day, evening)" class="border rounded px-4 py-2 w-full" />
+  </div>
+
+  <div class="md:col-span-2">
+    <button type="submit" class="bg-gray-200 text-gray-900 px-4 py-2 rounded hover:bg-gray-300">
+      Generate Prompts
+    </button>
+  </div>
+</form>
+
+
+
+  {% if prompts %}
+    <div class="mt-10">
+      <h3 class="text-lg font-semibold mb-4">Generated Prompts</h3>
+      <ul class="space-y-4">
+        {% for prompt in prompts %}
+          <li class="bg-white shadow rounded p-4">
+            <h4 class="font-bold">{{ prompt.title }}</h4>
+            <p class="text-sm text-gray-600">{{ prompt.category }} | {{ prompt.tone }} | {{ prompt.language }}</p>
+            <p class="mt-2">{{ prompt.description }}</p>
+          </li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

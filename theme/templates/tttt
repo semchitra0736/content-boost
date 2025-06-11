@@ -1,0 +1,66 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>{% block title %}ContentBoost{% endblock %}</title>
+    {% tailwind_css %}
+  </head>
+  <body class="bg-gray-100 text-gray-800">
+    <header class="bg-gray-900 text-white fixed w-full top-0 z-50 shadow-lg">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <!-- Logo -->
+          <div class="flex items-center">
+            <h1 class="text-2xl font-bold">
+              <a href="/generator" class="text-white hover:text-blue-400 transition">ContentBoost</a>
+            </h1>
+          </div>
+          <!-- Navigation -->
+          <nav class="hidden md:flex space-x-6">
+            <a href="/generator/veo3/" class="text-gray-200 hover:text-blue-400 transition">Home</a>
+            <a href="/generator/youtube-tags/" class="text-gray-200 hover:text-blue-400 transition">Tools</a>
+            <a href="/generator/tiktok-tags/" class="text-gray-200 hover:text-blue-400 transition">Pricing</a>
+            <a href="/generator/facebook-reels/" class="text-gray-200 hover:text-blue-400 transition">Resources</a>
+            <a href="/generator/facebook-reels/" class="text-gray-200 hover:text-blue-400 transition">Get Started</a>
+			  <a href="/generator/facebook-reels/" class="text-gray-200 hover:bg-blue-400 hover:text-white transition bg-blue-500 px-4 py-1 rounded-md inline-flex items-center text-base">Get Started</a>
+          </nav>
+          <!-- Hamburger Menu (Mobile) -->
+          <div class="md:hidden">
+            <button id="menu-toggle" class="text-gray-200 hover:text-blue-400 focus:outline-none">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden md:hidden bg-gray-900">
+          <nav class="flex flex-col space-y-4 p-4">
+            <a href="/generator/veo3/" class="text-gray-200 hover:text-blue-400 transition">VEO3</a>
+            <a href="/generator/youtube-tags/" class="text-gray-200 hover:text-blue-400 transition">YouTube</a>
+            <a href="/generator/tiktok-tags/" class="text-gray-200 hover:text-blue-400 transition">TikTok</a>
+            <a href="/generator/facebook-reels/" class="text-gray-200 hover:text-blue-400 transition">Reels</a>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <!-- Add paddisng to prevent content overlap with fixed header -->
+    <main class="max-w-4xl mx-auto mt-20 p-4 bg-white rounded-lg shadow">
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="text-center text-sm text-gray-500 mt-12 mb-4">
+      © 2025 ContentBoost. All rights reserved.
+    </footer>
+
+    <!-- JavaScript for Hamburger Menu Toggle -->
+    <script>
+      document.getElementById('menu-toggle').addEventListener('click', () => {
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenu.classList.toggle('hidden');
+      });
+    </script>
+  </body>
+</html>
